@@ -15,10 +15,17 @@ class Database {
     return retVal;
   }
 
-  // Future<Map> getStore(String sellerEmail) async {
-  //   Map retVal;
-  //   try{
-  //     DocumentSnapshot doc = await _firestore.collection('total_store').doc('seller').collection(sellerEmail).doc().get();
-  //   }
-  // }
+  Future<String> getImageUrl(String mainCategoryName) async {
+    String retImageUrl;
+    try {
+      DocumentSnapshot docPointer = await _firestore
+          .collection('admin_blank_designs')
+          .doc(mainCategoryName)
+          .get();
+      retImageUrl = docPointer.data()['imageUrl'];
+    } catch (e) {
+      print(e);
+    }
+    return retImageUrl;
+  }
 }

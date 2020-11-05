@@ -1,3 +1,4 @@
+import 'package:angrybaaz_user/screens/editingScreen.dart';
 import 'package:angrybaaz_user/screens/homeOverviewScreen.dart';
 import 'package:angrybaaz_user/screens/itemOverviewScreen.dart';
 import 'package:angrybaaz_user/screens/loginScreen.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
           ? UnAuthoriseUser()
           : HomeOverviewScreen(),
       routes: {
+        EditingScreen.id: (context) => EditingScreen(),
         HomeOverviewScreen.id: (context) => HomeOverviewScreen(),
         ItemOverviewScreen.id: (context) => ItemOverviewScreen(),
         SpecificTypeCategory.id: (context) => SpecificTypeCategory(),

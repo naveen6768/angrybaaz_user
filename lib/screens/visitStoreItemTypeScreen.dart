@@ -1,9 +1,11 @@
 // import 'dart:html';
 
+import 'package:angrybaaz_user/screens/editingScreen.dart';
 import 'package:angrybaaz_user/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:image_picker/image_picker.dart';
 
 class VisitStoreItemType extends StatefulWidget {
   static const id = 'VisitStoreItemType';
@@ -14,6 +16,22 @@ class VisitStoreItemType extends StatefulWidget {
 class _VisitStoreItemTypeState extends State<VisitStoreItemType> {
   FirebaseFirestore _overallStore = FirebaseFirestore.instance;
   bool hideToggler = false;
+  PickedFile _image;
+  final ImagePicker _picker = ImagePicker();
+
+  Future getImage() async {
+    PickedFile pickedFile = await _picker.getImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        print('image inide _image');
+        _image = PickedFile(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final List seller_info = ModalRoute.of(context).settings.arguments;
@@ -63,7 +81,6 @@ class _VisitStoreItemTypeState extends State<VisitStoreItemType> {
                       shrinkWrap: true,
                       itemCount: document.length,
                       itemBuilder: (context, index) {
-                        print(index);
                         return Card(
                           elevation: 7.0,
                           color: Color(0xff41444b),
@@ -125,16 +142,25 @@ class _VisitStoreItemTypeState extends State<VisitStoreItemType> {
           child: Column(
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () async {
+                  await getImage();
+                  Navigator.of(context)
+                      .pushNamed(EditingScreen.id, arguments: _image);
+                  print('yeah');
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(14.0),
-                  child: CircleAvatar(
-                    backgroundColor: Color(0xff81b214),
-                    radius: 45.0,
-                    child: Icon(
-                      Icons.upload_file,
-                      size: 35.0,
-                      color: Colors.white,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(44.0),
+                    elevation: 8.0,
+                    child: CircleAvatar(
+                      backgroundColor: Color(0xff81b214),
+                      radius: 45.0,
+                      child: Icon(
+                        Icons.upload_file,
+                        size: 35.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
