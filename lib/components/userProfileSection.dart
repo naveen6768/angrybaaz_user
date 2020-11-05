@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class UserProfileSectionDrawer extends StatefulWidget {
   // UserProfileSectionDrawer(this.sellerEmail);
@@ -11,7 +12,8 @@ class UserProfileSectionDrawer extends StatefulWidget {
 
 class _UserProfileSectionDrawerState extends State<UserProfileSectionDrawer> {
   // FirebaseFirestore _firestoreInstance = FirebaseFirestore.instance;
-  String email = 'kpravin627@gmail.com';
+  final _currentUser = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return UserAccountsDrawerHeader(
@@ -24,7 +26,7 @@ class _UserProfileSectionDrawerState extends State<UserProfileSectionDrawer> {
             fontWeight: FontWeight.w500),
       ),
       accountEmail: Text(
-        email,
+        _currentUser.email,
         style: const TextStyle(
             color: Color(0xff213e3b),
             fontSize: 15.0,
