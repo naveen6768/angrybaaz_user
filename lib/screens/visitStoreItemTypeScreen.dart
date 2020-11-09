@@ -1,7 +1,7 @@
 // import 'dart:html';
 
-import 'package:angrybaaz_user/screens/editingScreen.dart';
-import 'package:angrybaaz_user/services/database.dart';
+import 'package:Angrybaaz/screens/editingScreen.dart';
+import 'package:Angrybaaz/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';

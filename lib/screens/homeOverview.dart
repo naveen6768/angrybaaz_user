@@ -1,4 +1,4 @@
-import 'package:angrybaaz_user/screens/homeOverviewScreen.dart';
+import 'package:Angrybaaz/screens/homeOverviewScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

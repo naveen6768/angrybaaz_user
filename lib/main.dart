@@ -1,9 +1,9 @@
-import 'package:angrybaaz_user/screens/editingScreen.dart';
-import 'package:angrybaaz_user/screens/homeOverviewScreen.dart';
-import 'package:angrybaaz_user/screens/itemOverviewScreen.dart';
-import 'package:angrybaaz_user/screens/loginScreen.dart';
-import 'package:angrybaaz_user/screens/visitStoreItemTypeScreen.dart';
-import 'package:angrybaaz_user/widgets/specificTypeCategory.dart';
+import 'package:Angrybaaz/screens/editingScreen.dart';
+import 'package:Angrybaaz/screens/homeOverviewScreen.dart';
+import 'package:Angrybaaz/screens/itemOverviewScreen.dart';
+import 'package:Angrybaaz/screens/loginScreen.dart';
+import 'package:Angrybaaz/screens/visitStoreItemTypeScreen.dart';
+import 'package:Angrybaaz/widgets/specificTypeCategory.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import './screens/unAuthorise.dart';

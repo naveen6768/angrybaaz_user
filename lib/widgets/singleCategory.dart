@@ -1,4 +1,4 @@
-import 'package:angrybaaz_user/screens/itemOverviewScreen.dart';
+import 'package:Angrybaaz/screens/itemOverviewScreen.dart';
 import 'package:flutter/material.dart';
 
 class SingleCategory extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:angrybaaz_user/components/drawerScreen.dart';
-import 'package:angrybaaz_user/components/userProfileSection.dart';
-import 'package:angrybaaz_user/screens/loginScreen.dart';
+import 'package:Angrybaaz/components/drawerScreen.dart';
+import 'package:Angrybaaz/components/userProfileSection.dart';
+import 'package:Angrybaaz/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';

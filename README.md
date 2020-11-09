@@ -1,4 +1,4 @@
-# angrybaaz_user
+# Angrybaaz
 
 A new Flutter project.
 
